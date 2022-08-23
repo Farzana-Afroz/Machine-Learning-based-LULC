@@ -50,7 +50,6 @@ var palette = [
 Map.addLayer(classified_2001,
 {min:0, max: 3, palette: palette},'Rajshahi Land-2001 Using CART');
 
-
 ////////////////Accuracy assessment///////////////////////////////////////
 
 //Merge into one FeatureCollection
@@ -70,7 +69,6 @@ print('Validation error matrix: ', testAccuracy);
 //Print the overall accuracy to the console
 print('Validation overall accuracy:by CART', testAccuracy.accuracy());
 
-
 // // Calculate kappa statistic from CART // //
 
 var array = ee.Array([[73, 1, 2,  0],
@@ -83,7 +81,6 @@ print("Constructed confusion matrix", confusionMatrix);
 
 print('Kappa statistic from CART', confusionMatrix.kappa());
 
-
 // Calculate consumer's accuracy, also known as user's accuracy or
 // specificity and the complement of commission error (1 − commission error).
 print("Consumer's accuracy", confusionMatrix.consumersAccuracy());
@@ -91,22 +88,6 @@ print("Consumer's accuracy", confusionMatrix.consumersAccuracy());
 // Calculate producer's accuracy, also known as sensitivity and the
 // compliment of omission error (1 − omission error).
 print("Producer's accuracy", confusionMatrix.producersAccuracy());
-
-  /* Export LULC Image using CART
-
-var VisParams = {min:0, max: 3, palette: palette} ; 
-
-var RajComposite = classified_2001.visualize(VisParams);
-
-Export.image.toDrive({
-  image: RajComposite.clip(Rajshahi),
-  description: '2001_Rajshahi_by_CART',
-  fileNamePrefix: '2001 Rajshahi Using CART',
-  region: Rajshahi,
-  scale: 10,
-  folder: 'GEE Maps',
-  maxPixels: 1e10}); */
-
 
 /////////////////Train the classifier by RF////////////////
 
@@ -131,8 +112,7 @@ var palette = [
 Map.addLayer(classified_2001,
 {min:0, max: 3, palette: palette},'Rajshahi Land-2001 Using RF');
 
-
-//Accuracy assessment
+///////////////////Accuracy assessment
 
 //Merge into one FeatureCollection
 var valNames = vWater_bodies.merge(vVegetation).merge(vBuilt_up).merge(vBare_land);
@@ -151,8 +131,6 @@ print('Validation error matrix: ', testAccuracy);
 //Print the overall accuracy to the console
 print('Validation overall accuracy:by RF', testAccuracy.accuracy());
 
-
-
 // // Calculate kappa statistic from RF // //
 
 var array = ee.Array([[72, 1, 2,  1],
@@ -165,7 +143,6 @@ print("Constructed confusion matrix", confusionMatrix);
 
 print('Kappa statistic from RF', confusionMatrix.kappa());
 
-
 // Calculate consumer's accuracy, also known as user's accuracy or
 // specificity and the complement of commission error (1 − commission error).
 print("Consumer's accuracy", confusionMatrix.consumersAccuracy());
@@ -173,22 +150,6 @@ print("Consumer's accuracy", confusionMatrix.consumersAccuracy());
 // Calculate producer's accuracy, also known as sensitivity and the
 // compliment of omission error (1 − omission error).
 print("Producer's accuracy", confusionMatrix.producersAccuracy()); 
-
-
-/* Export LULC Image using RF
-
-var VisParams = {min:0, max: 3, palette: palette} ; 
-
-var RajComposite = classified_2001.visualize(VisParams);
-
-Export.image.toDrive({
-  image: RajComposite.clip(Rajshahi),
-  description: '2001_Rajshahi_by_RF',
-  fileNamePrefix: '2001 Rajshahi Using RF',
-  region: Rajshahi,
-  scale: 10,
-  folder: 'GEE Maps',
-  maxPixels: 1e10}); */
 
 ////////////Train the classifier by SVM
 
@@ -215,7 +176,6 @@ var palette = [
 //Display the classified result 
 Map.addLayer(classified_2001,
 {min:0, max: 3, palette: palette},'Rajshahi Land-2001 Using SVM');
-
 
 //Accuracy assessment
 
@@ -248,7 +208,6 @@ print("Constructed confusion matrix", confusionMatrix);
 
 print('Kappa statistic from SVM', confusionMatrix.kappa());
 
-
 // Calculate consumer's accuracy, also known as user's accuracy or
 // specificity and the complement of commission error (1 − commission error).
 print("Consumer's accuracy", confusionMatrix.consumersAccuracy());
@@ -273,21 +232,6 @@ var area_chart = ui.Chart.image.byClass({
   })
 
 print(area_chart); 
-
-/* Export LULC Image using SVM
-
-var VisParams = {min:0, max: 3, palette: palette} ; 
-var RajComposite = classified_2001.visualize(VisParams);
-
-Export.image.toDrive({
-  image: RajComposite.clip(Rajshahi),
-  description: '2001_Rajshahi_by_SVM',
-  fileNamePrefix: '2001 Rajshahi Using SVM',
-  region: Rajshahi,
-  scale: 10,
-  folder: 'GEE Maps',
-  maxPixels: 1e10}); */
-
 
 ////////////  
 /*for raster export from CART

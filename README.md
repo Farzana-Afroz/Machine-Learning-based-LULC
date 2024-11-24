@@ -3,9 +3,13 @@
 Find out LULC Area using chart function from GEE
 
 Compare MLA-Classifiers based on Accuracy Assessments of OA, Kappa Statistic, UA & PA
+
 The following maps are developed in ArcGIS after analyzing in GEE on Landsat images.
 
-![image](https://github.com/user-attachments/assets/46207b95-098c-4927-80e0-ad4184d54a52)
+
+![image](https://github.com/user-attachments/assets/21e62318-595b-4a9e-89de-8c9dd01bdafe)
 
 
-<img width="455" alt="image" src="https://github.com/user-attachments/assets/8a05ea5f-2d32-4882-a11a-214ab4ba3628">
+
+![image](https://github.com/user-attachments/assets/f7c86845-efd8-4555-b634-55d325166bad)
+

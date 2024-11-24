@@ -7,7 +7,8 @@ Compare MLA-Classifiers based on Accuracy Assessments of OA, Kappa Statistic, UA
 The following maps are developed in ArcGIS after analyzing in GEE on Landsat images.
 
 
-![image](https://github.com/user-attachments/assets/21e62318-595b-4a9e-89de-8c9dd01bdafe)
+![image](https://github.com/user-attachments/assets/8c9708a9-1505-4721-959f-688471a7aa7e)
+
 
 
 
